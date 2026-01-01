@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="This is My Portfolio Website As an Web Developer">
+  <title>Kishan Solanki | Web Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+          <span class="k-letter">M</span><span class="rest">anav.</span>
+        </div>
+      
+        <!-- Hamburger Toggle Button -->
+        <div class="menu-toggle" id="menu-toggle">
+          &#9776;
+        </div>
+      
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="nav-links">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      
+      
+
+      
+      <div class="hero" id="hero">
+        <div class="hero-content">
+          <div class="hero-text">
+            <p class="tagline">Web Developer</p>
+            <h1>Hi, I'm <span class="highlight">Manav</span></h1>
+            <h2>From Gujarat, India</h2>
+          </div>
+          <div class="hero-img">
+            <img src="Manav.jpeg" alt="Manav Solanki photo" />
+          </div>
+        </div>
+      </div>
+      
+
+      
+
+      <section class="about-section" id="about">
+        <div class="about-container">
+          <!-- Left Side Image -->
+          <div class="about-image">
+            <img src="dev.jpg" alt="Kishan" />
+          </div>
+      
+          <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+               I am a passionate Web Developer from Gujarat, India. I have recently completed my Bachelor of Computer Applications (BCA) from Shri D.N. Institute of Computer Application, affiliated with Sardar Patel University, Vallabh Vidyanagar, with Grade A. I enjoy building clean, user-centric web experiences and love working on real-world websites that create practical impact.
+            </p>
+          
+            <!-- Tabs -->
+            <div class="tabs">
+              <button class="tab active" data-tab="skills">Skills</button>
+              <button class="tab" data-tab="experience">Experience</button>
+              <button class="tab" data-tab="education">Education</button>
+            </div>
+          
+            <!-- Tab Content: Skills -->
+            <div class="tab-content active" id="skills">
+              <h4>Frontend Development</h4>
+              <p>HTML, CSS, JavaScript(basics)</p>
+              <h4>Backend Development</h4>
+              <p>PHP, ASP.NET (C#), Microsoft SQL Server, MySQL</p>
+              <h4>Project Building</h4>
+              <p>Online Election Voting System, Freelance Project</p>
+            </div>
+          
+            <!-- Tab Content: Experience -->
+            <div class="tab-content" id="experience">
+              <h4>Major Project</h4>
+              <p>Developed "Online Election Voting Website" using ASP.NET (C#) and SQL Server for secure MLA election voting in Gujarat.</p>
+              <h4>Freelance Developer</h4>
+              <p>Created 24x7repairhub.in, A website for my client.</p>
+            </div>
+          
+            <!-- Tab Content: Education -->
+            <div class="tab-content" id="education">
+              <h4>BCA - Shri D.N. Institute of Computer Application</h4>
+              <p>SP University, Vallabh Vidyanagar | CGPA: 7.76 | Graduated: 2025</p>
+              <h4>12th Commerce</h4>
+              <p>Gujarat State Board | Score: 73%</p>
+              <h4>10th Standard</h4>
+              <p>Gujarat State Board | Score: 64%</p>
+            </div>
+          </div>
+          
+      </section>
+      
+
+<!-- ===== Services Section ===== -->
+<section class="services" id="services">
+  <h2 class="section-title">My Services</h2>
+  <div class="services-container">
+    
+    <!-- Service Card -->
+    <div class="service-card" data-title="Web Development" data-detail="I create fast, secure and responsive websites using HTML, CSS, JS, PHP and MySQL. My focus is always clean code and optimized performance.">
+      <div class="service-icon"><i class="fas fa-code"></i></div>
+      <h3>Web Development</h3>
+      <p>I build responsive and powerful websites using modern tech.</p>
+      <span class="learn-more">Learn More →</span>
+    </div>
+
+    <div class="service-card" data-title="Responsive UI/UX" data-detail="I design clean, minimal and modern interfaces that adapt beautifully across all devices. User experience is at the core of my process.">
+      <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+      <h3>Responsive UI/UX</h3>
+      <p>Design user-friendly interfaces for all screen sizes.</p>
+      <span class="learn-more">Learn More →</span>
+    </div>
+
+    <div class="service-card" data-title="Project Development" data-detail="I’ve created large-scale applications like an Online Voting System using C#, ASP.NET, SQL Server, and also built backend logic and frontend UI.">
+      <div class="service-icon"><i class="fas fa-database"></i></div>
+      <h3>Project Development</h3>
+      <p>Handled real-world projects using full-stack tech.</p>
+      <span class="learn-more">Learn More →</span>
+    </div>
+
+    <div class="service-card" data-title="Freelancing Services" data-detail="Delivered 7+ successful freelance projects to classmates and local clients with great feedback. Custom design and full deployment included.">
+      <div class="service-icon"><i class="fas fa-handshake"></i></div>
+<h3>Freelancing Services</h3>
+<p>I enjoy working with clients to deliver effective and customized business solutions.</p>
+      <span class="learn-more">Learn More →</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== Modal Popup ===== -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-content">
+    <span class="modal-close" id="modal-close">&times;</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-description"></p>
+  </div>
+</div>
+
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-header">
+    <h2>My Work</h2>
+  </div>
+
+  <div class="portfolio-grid">
+    <!-- First 4 Projects (Always Visible) -->
+    <div class="project">
+      <img src="election.jpg" alt="Online Election Voting Website">
+      <div class="overlay">
+        <h3>Online Election Voting</h3>
+        <p>Vote online for Gujarat MLA elections.</p>
+        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+      </div>
+    </div>
+    <div class="project">
+      <img src="logo.png" alt="Tour and Travel">
+      <div class="overlay">
+        <h3>24x7repairhub</h3>
+        <p>A Freelancing website for my client.</p>
+        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+      </div>
+    </div>
+    <div class="project">
+      <img src="dev.jpg" alt="Attendance Management">
+      <div class="overlay">
+        <h3>Personal Portfolio Website.</h3>
+        <p>Designed my Personal Portfolio Website.</p>
+        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+      </div>
+    </div>
+   
+  </div>
+
+  <div class="see-more-btn">
+    <button class="btn" id="seeMoreBtn">See More</button>
+  </div>
+</section>
+
+
+
+
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-info">
+      <h2>Contact Me</h2>
+      <p><i class="fas fa-paper-plane"></i>manavsolanki662@gmail.com</p>
+      <p><i class="fas fa-phone"></i>+91                                                  8849221191</p>
+      <div class="social-icons">
+        <a href="https://github.com/manav-solanki-662">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/manav-solanki-ab65153a2/"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <a href="Kishan_Solanki_Resume.pdf" download class="btn cv-btn"><i class="fas fa-download"></i> Download CV</a>
+    </div>
+    <form class="contact-form" id="contactForm" action="https://formsubmit.co/manavsolanki662@gmail.com" method="POST" target="hidden_iframe" onsubmit="return showSuccessMessage()">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  
+    <!-- Success Message (initially hidden) -->
+    <div id="successMessage" style="display:none; color: green; margin-top: 15px;">
+      ✅ Message sent successfully!
+    </div>
+  
+    <!-- Invisible iframe to avoid page reload -->
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    
+  </div>
+</section>
+
+
+
+    
+
+    <footer>
+      <div class="footer-container">
+        <p>&copy; 2025 Manav Solanki . All rights reserved.</p>
+       
+      </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
