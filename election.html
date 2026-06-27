@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Election Voting System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="project-page">
+
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+
+        <h1>Online Election Voting System</h1>
+
+        <p class="project-subtitle">
+            A secure web application for conducting online elections with voter authentication and digital voting.
+        </p>
+
+        <img src="election.jpg" class="project-banner" alt="Online Election Voting System">
+
+        <!-- Overview -->
+        <div class="overview">
+
+            <h2>Project Overview</h2>
+
+            <p>
+                The Online Election Voting System is a web-based application designed
+                to conduct elections digitally in a secure and transparent manner.
+                It allows eligible voters to log in, view available elections,
+                cast their vote securely, and ensures that each voter can vote only once.
+                Administrators can manage elections, candidates, voters, and publish
+                election results efficiently through an admin dashboard.
+            </p>
+
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="tech-stack">
+
+            <h2>Tech Stack</h2>
+
+            <span>ASP.NET</span>
+            <span>C#</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>MySQL</span>
+
+        </div>
+
+        <div class="project-highlights">
+
+            <h2>Project Highlights</h2>
+
+            <div class="highlight-item">
+                <strong>Role:</strong> Front-end Developer
+            </div>
+
+            <div class="highlight-item">
+                <strong>Duration:</strong> 4 Months
+            </div>
+
+            <div class="highlight-item">
+                <strong>Project Type:</strong> Academic Project
+            </div>
+
+            <div class="highlight-item">
+                <strong>Problem Solved:</strong>
+                Developed a secure online voting platform that enables eligible voters to cast votes digitally while
+                reducing manual election processes and improving accessibility.
+            </div>
+
+            <div class="highlight-item">
+                <strong>Key Learning:</strong>
+                Gained practical experience in full-stack development, user authentication, database management, secure
+                data handling, and building responsive web applications.
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+
+            <h2>Key Features</h2>
+
+            <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> Secure Voter Authentication</li>
+                <li><i class="fas fa-check-circle"></i> Online Vote Casting</li>
+                <li><i class="fas fa-check-circle"></i> Candidate Management</li>
+                <li><i class="fas fa-check-circle"></i> Voter Management</li>
+                <li><i class="fas fa-check-circle"></i> Election Management</li>
+                <li><i class="fas fa-check-circle"></i> Real-time Result Display</li>
+                <li><i class="fas fa-check-circle"></i> Responsive User Interface</li>
+            </ul>
+
+        </div>
+
+        <!-- Gallery -->
+        <!-- Gallery -->
+        <div class="gallery">
+
+            <h2>Project Screenshots</h2>
+
+            <img src="images/voting/voting_admindash.png" alt="Admin Dashboard">
+
+            <img src="images/voting/manage_election.png" alt="Manage Election">
+
+            <img src="images/voting/add_voter.png" alt="Add Voter">
+
+            <img src="images/voting/home.png" alt="Home">
+
+            <img src="images/voting/parties.png" alt="Political Parties">
+
+            <img src="images/voting/profile.png" alt="Profile">
+
+        </div>
+
+    </div>
+
+    <!-- =======================
+     PROFESSIONAL LIGHTBOX
+======================= -->
+
+    <div id="lightbox" class="lightbox">
+
+        <span class="close">&times;</span>
+
+        <span class="prev">&#10094;</span>
+
+        <img id="lightbox-img" alt="Project Screenshot">
+
+        <span class="next">&#10095;</span>
+
+        <div id="counter"></div>
+
+    </div>
+
+    <script>
+
+        const gallery = document.querySelectorAll(".gallery img");
+
+        const lightbox = document.getElementById("lightbox");
+
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        const closeBtn = document.querySelector(".close");
+
+        const prevBtn = document.querySelector(".prev");
+
+        const nextBtn = document.querySelector(".next");
+
+        const counter = document.getElementById("counter");
+
+        let current = 0;
+
+        let zoom = 1;
+
+
+        // Open Image
+        gallery.forEach((img, index) => {
+
+            img.addEventListener("click", () => {
+
+                current = index;
+
+                showImage();
+
+                lightbox.style.display = "flex";
+
+            });
+
+        });
+
+
+        // Display Image
+        function showImage() {
+
+            lightboxImg.src = gallery[current].src;
+
+            counter.innerHTML = (current + 1) + " / " + gallery.length;
+
+            zoom = 1;
+
+            lightboxImg.style.transform = "scale(1)";
+
+        }
+
+
+        // Next Image
+        nextBtn.onclick = () => {
+
+            current = (current + 1) % gallery.length;
+
+            showImage();
+
+        };
+
+
+        // Previous Image
+        prevBtn.onclick = () => {
+
+            current = (current - 1 + gallery.length) % gallery.length;
+
+            showImage();
+
+        };
+
+
+        // Close
+        closeBtn.onclick = () => {
+
+            lightbox.style.display = "none";
+
+        };
+
+
+        // Click outside image
+        lightbox.onclick = (e) => {
+
+            if (e.target === lightbox) {
+
+                lightbox.style.display = "none";
+
+            }
+
+        };
+
+
+        // Keyboard controls
+        document.addEventListener("keydown", (e) => {
+
+            if (lightbox.style.display !== "flex") return;
+
+            if (e.key === "ArrowRight") nextBtn.click();
+
+            if (e.key === "ArrowLeft") prevBtn.click();
+
+            if (e.key === "Escape") closeBtn.click();
+
+        });
+
+
+        // Mouse wheel zoom
+        lightbox.addEventListener("wheel", function (e) {
+
+            e.preventDefault();
+
+            if (e.deltaY < 0) {
+
+                zoom += 0.1;
+
+            } else {
+
+                zoom -= 0.1;
+
+            }
+
+            zoom = Math.max(1, Math.min(3, zoom));
+
+            lightboxImg.style.transform = `scale(${zoom})`;
+
+        });
+
+    </script>
+
+</body>
+
+</html>

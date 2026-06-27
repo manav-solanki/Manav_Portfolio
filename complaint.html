@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="project-page">
+
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+
+        <h1>Complaint Management System</h1>
+
+        <p class="project-subtitle">
+            Manage and track complaints efficiently through a centralized web application.
+        </p>
+
+        <img src="complaint_mainpage.png" class="project-banner" alt="Complaint Management">
+
+        <div class="overview">
+
+            <h2>Project Overview</h2>
+
+            <p>
+                Complaint Management System is a full-stack web application that
+                enables users to register complaints while allowing administrators
+                to manage, track, and resolve them efficiently through an intuitive
+                dashboard.
+            </p>
+
+        </div>
+
+        <div class="tech-stack">
+
+            <h2>Tech Stack</h2>
+
+            <span>React.js</span>
+            <span>Node.js</span>
+            <span>Express.js</span>
+            <span>MySQL(Xampp)</span>
+
+        </div>
+
+        <div class="project-highlights">
+
+            <h2>Project Highlights</h2>
+
+            <div class="highlight-item">
+                <strong>Role:</strong> Full Stack Developer
+            </div>
+
+            <div class="highlight-item">
+                <strong>Duration:</strong> 3 Months
+            </div>
+
+            <div class="highlight-item">
+                <strong>Project Type:</strong> Internship Project
+            </div>
+
+            <div class="highlight-item">
+                <strong>Problem Solved:</strong>
+                Streamlined complaint registration, tracking, and management through a centralized platform.
+            </div>
+
+            <div class="highlight-item">
+                <strong>Key Learning:</strong>
+                Improved skills in React.js, Node.js, API integration, authentication, and database management.
+            </div>
+
+        </div>
+
+
+
+        <div class="features">
+
+            <h2>Key Features</h2>
+
+            <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> Secure User Authentication</li>
+                <li><i class="fas fa-check-circle"></i> Complaint Registration and Tracking</li>
+                <li><i class="fas fa-check-circle"></i> Admin Dashboard</li>
+                <li><i class="fas fa-check-circle"></i> Search and Filter Complaints</li>
+                <li><i class="fas fa-check-circle"></i> Complaint Report Generation</li>
+                <li><i class="fas fa-check-circle"></i> Dark Mode Support</li>
+            </ul>
+        </div>
+
+        <div class="gallery">
+
+            <h2>Project Screenshots</h2>
+
+            <img src="images/complaint/admindashboard.png" alt="Admin Dashboard" onclick="openImage(0)">
+
+            <img src="images/complaint/userdashboard.png" alt="User Dashboard" onclick="openImage(1)">
+
+            <img src="images/complaint/addcomplaint.png" alt="Add Complaint" onclick="openImage(2)">
+
+            <img src="images/complaint/viewcomplaint.png" alt="View Complaint" onclick="openImage(3)">
+
+            <img src="images/complaint/about.png" alt="About Page" onclick="openImage(4)">
+
+            <img src="images/complaint/report.png" alt="Complaint Report" onclick="openImage(5)">
+
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+
+            <span class="close-lightbox">&times;</span>
+
+            <span class="prev">&#10094;</span>
+
+            <img id="lightbox-img" src="" alt="Project Screenshot">
+
+            <span class="next">&#10095;</span>
+
+            <div id="counter" class="counter"></div>
+
+        </div>
+
+        <script>
+            const images = [
+                "images/complaint/admindashboard.png",
+                "images/complaint/userdashboard.png",
+                "images/complaint/addcomplaint.png",
+                "images/complaint/viewcomplaint.png",
+                "images/complaint/about.png",
+                "images/complaint/report.png"
+            ];
+
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const closeBtn = document.querySelector(".close-lightbox");
+            const prevBtn = document.querySelector(".prev");
+            const nextBtn = document.querySelector(".next");
+            const counter = document.getElementById("counter");
+
+            let current = 0;
+            let zoom = 1;
+
+            function showImage() {
+                lightboxImg.src = images[current];
+                counter.textContent = `${current + 1} / ${images.length}`;
+
+                zoom = 1;
+                lightboxImg.style.transform = "scale(1)";
+            }
+
+            function openImage(index) {
+                current = index;
+                showImage();
+                lightbox.style.display = "flex";
+            }
+
+            nextBtn.onclick = function () {
+                current = (current + 1) % images.length;
+                showImage();
+            };
+
+            prevBtn.onclick = function () {
+                current = (current - 1 + images.length) % images.length;
+                showImage();
+            };
+
+            closeBtn.onclick = function () {
+                lightbox.style.display = "none";
+            };
+
+            lightbox.onclick = function (e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = "none";
+                }
+            };
+
+            document.addEventListener("keydown", function (e) {
+
+                if (lightbox.style.display !== "flex") return;
+
+                if (e.key === "ArrowRight") {
+                    nextBtn.click();
+                }
+
+                if (e.key === "ArrowLeft") {
+                    prevBtn.click();
+                }
+
+                if (e.key === "Escape") {
+                    lightbox.style.display = "none";
+                }
+            });
+
+            lightbox.addEventListener("wheel", function (e) {
+
+                if (lightbox.style.display !== "flex") return;
+
+                e.preventDefault();
+
+                if (e.deltaY < 0) {
+                    zoom += 0.1;
+                } else {
+                    zoom -= 0.1;
+                }
+
+                zoom = Math.max(1, Math.min(3, zoom));
+
+                lightboxImg.style.transform = `scale(${zoom})`;
+
+            });
+        </script>
+
+</body>
+
+</html>
