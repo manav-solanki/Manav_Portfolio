@@ -326,7 +326,6 @@ body {
 }
 
 .about-para {
-  margin-top: -15px;
   max-width: 750px;
   font-size: 18px;
   line-height: 1.7;
@@ -359,6 +358,7 @@ body {
 }
 
 .tabs {
+  margin-top: 15;
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
