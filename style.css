@@ -808,6 +808,11 @@ body {
     height: auto;
     margin: 0 auto 30px;
   }
+
+  .gallery{
+    padding-right: 5px;
+    height: 300px;
+  }
 }
 
 .project-page h2 {
