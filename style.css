@@ -239,8 +239,8 @@ body {
   }
 
   .hero-img img {
-    height: 300px;
-    width: 500px;
+    height: 400px !important;
+    width: 500px !important;
     margin-left: -40px;
   }
 
